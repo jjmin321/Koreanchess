@@ -68,7 +68,19 @@ func main() {
 	if err != nil {
 		log.Fatalf("read file error: %v", err)
 	}
-	greenWangImg, _, err = ebitenutil.NewImageFromFile("./images/green_wang.png", ebiten.FilterDefault)
+	gimulImgs[GimulTypeGreenWang], _, err = ebitenutil.NewImageFromFile("./images/green_wang.png", ebiten.FilterDefault)
+	if err != nil {
+		log.Fatalf("read file error: %v", err)
+	}
+	gimulImgs[GimulTypeGreenJa], _, err = ebitenutil.NewImageFromFile("./images/green_ja.png", ebiten.FilterDefault)
+	if err != nil {
+		log.Fatalf("read file error: %v", err)
+	}
+	gimulImgs[GimulTypeGreenJang], _, err = ebitenutil.NewImageFromFile("./images/green_jang.png", ebiten.FilterDefault)
+	if err != nil {
+		log.Fatalf("read file error: %v", err)
+	}
+	gimulImgs[GimulTypeGreenSang], _, err = ebitenutil.NewImageFromFile("./images/green_sang.png", ebiten.FilterDefault)
 	if err != nil {
 		log.Fatalf("read file error: %v", err)
 	}

@@ -37,11 +37,11 @@ var (
 func update(screen *ebiten.Image) error {
 	screen.DrawImage(bgimg, nil)
 
-	S := 10
-	W := 60
+	S := 20
+	W := 116
 
-	T := 10
-	H := 60
+	T := 23
+	H := 116
 	for i := 0; i < 4; i++ {
 		for j := 0; j < 3; j++ {
 
@@ -127,9 +127,9 @@ func main() {
 
 	//red
 	board[2][1] = GimulTypeRedJa
-	board[3][0] = GimulTypeGreenSang
-	board[3][1] = GimulTypeGreenWang
-	board[3][2] = GimulTypeGreenJang
+	board[3][0] = GimulTypeRedSang
+	board[3][1] = GimulTypeRedWang
+	board[3][2] = GimulTypeRedJang
 
 	err = ebiten.Run(update, 500, 400, 1.0, "12 chess")
 

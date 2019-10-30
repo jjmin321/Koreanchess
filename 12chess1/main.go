@@ -48,16 +48,22 @@ func update(screen *ebiten.Image) error {
 				screen.DrawImage(gimulImgs[GimulTypeGreenJa], nil)
 			case GimulTypeGreenJang:
 				//Draw GreenJang
+				screen.DrawImage(gimulImgs[GimulTypeGreenJang], nil)
 			case GimulTypeGreenSang:
 				//Draw GreenSang
+				screen.DrawImage(gimulImgs[GimulTypeGreenSang], nil)
 			case GimulTypeRedWang:
 				//Draw RedWang
+				screen.DrawImage(gimulImgs[GimulTypeRedWang], nil)
 			case GimulTypeRedJa:
 				//Draw RedJa
+				screen.DrawImage(gimulImgs[GimulTypeRedJa], nil)
 			case GimulTypeRedJang:
 				//Draw RedJang
+				screen.DrawImage(gimulImgs[GimulTypeRedJang], nil)
 			case GimulTypeRedSang:
 				//Draw RedSang
+				screen.DrawImage(gimulImgs[GimulTypeRedSang], nil)
 			}
 		}
 	}
@@ -83,6 +89,22 @@ func main() {
 		log.Fatalf("read file error: %v", err)
 	}
 	gimulImgs[GimulTypeGreenSang], _, err = ebitenutil.NewImageFromFile("./images/green_sang.png", ebiten.FilterDefault)
+	if err != nil {
+		log.Fatalf("read file error: %v", err)
+	}
+	gimulImgs[GimulTypeRedWang], _, err = ebitenutil.NewImageFromFile("./images/red_wang.png", ebiten.FilterDefault)
+	if err != nil {
+		log.Fatalf("read file error: %v", err)
+	}
+	gimulImgs[GimulTypeRedJa], _, err = ebitenutil.NewImageFromFile("./images/red_ja.png", ebiten.FilterDefault)
+	if err != nil {
+		log.Fatalf("read file error: %v", err)
+	}
+	gimulImgs[GimulTypeRedJang], _, err = ebitenutil.NewImageFromFile("./images/red_jang.png", ebiten.FilterDefault)
+	if err != nil {
+		log.Fatalf("read file error: %v", err)
+	}
+	gimulImgs[GimulTypeRedSang], _, err = ebitenutil.NewImageFromFile("./images/red_sang.png", ebiten.FilterDefault)
 	if err != nil {
 		log.Fatalf("read file error: %v", err)
 	}

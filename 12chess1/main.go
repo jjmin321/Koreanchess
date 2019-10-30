@@ -37,11 +37,16 @@ var (
 func update(screen *ebiten.Image) error {
 	screen.DrawImage(bgimg, nil)
 
+	S := 10
+	W := 60
+
+	T := 10
+	H := 60
 	for i := 0; i < 4; i++ {
 		for j := 0; j < 3; j++ {
 
 			opts := &ebiten.DrawImageOptions{}
-			opts.GeoM.Translate(20, 20)
+			opts.GeoM.Translate(S+W*i, T+H*j) //x좌표, y좌표
 			switch board[i][j] {
 			case GimulTypeGreenWang:
 				//Draw GreenWang

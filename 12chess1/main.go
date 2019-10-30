@@ -12,16 +12,16 @@ type GimulType int
 // Type aliasing
 
 const (
-	GimulTypeNone GimulType = -1 + iota
-	GimulTypeGreenWang
-	GimulTypeGreenJa
-	GimulTypeGreenJang
-	GimulTypeGreenSang
-	GimulTypeRedWang
-	GimulTypeRedJa
-	GimulTypeRedJang
-	GimulTypeRedSang
-	GimulTypeMax
+	GimulTypeNone      GimulType = -1 + iota
+	GimulTypeGreenWang           //0
+	GimulTypeGreenJa             //1
+	GimulTypeGreenJang           //2
+	GimulTypeGreenSang           //3
+	GimulTypeRedWang             //4
+	GimulTypeRedJa               //5
+	GimulTypeRedJang             //6
+	GimulTypeRedSang             //7
+	GimulTypeMax                 //8
 )
 
 //when you no need to value == only need to tell apart
@@ -29,9 +29,9 @@ const (
 //iota in const start at 0 -> next const : 1 -> next next const : 2 -> next next next const: 3
 
 var (
-	board     [4][3]GimulType
-	bgimg     *ebiten.Image
-	gimulImgs [GimulTypeMax]*ebiten.Image
+	board     [4][3]GimulType             //크기가 [4][3]인 GimulType 타입 board 배열을 선언한다.
+	bgimg     *ebiten.Image               //*ebiten.Image 타입 bgimg를 선언한다.
+	gimulImgs [GimulTypeMax]*ebiten.Image //크기가 GimulTypeMax인 *ebiten.Image 타입 gimulImgs 배열을 선언한다.
 )
 
 func update(screen *ebiten.Image) error {
@@ -120,16 +120,16 @@ func main() {
 	// Initialize board
 
 	//green
-	board[0][0] = GimulTypeGreenSang
-	board[0][1] = GimulTypeGreenWang
-	board[0][2] = GimulTypeGreenJang
-	board[1][1] = GimulTypeGreenJa
+	board[0][0] = GimulTypeGreenSang //3
+	board[0][1] = GimulTypeGreenWang //0
+	board[0][2] = GimulTypeGreenJang //1
+	board[1][1] = GimulTypeGreenJa   //2
 
 	//red
-	board[2][1] = GimulTypeRedJa
-	board[3][0] = GimulTypeRedSang
-	board[3][1] = GimulTypeRedWang
-	board[3][2] = GimulTypeRedJang
+	board[2][1] = GimulTypeRedJa   //7
+	board[3][0] = GimulTypeRedSang //4
+	board[3][1] = GimulTypeRedWang //5
+	board[3][2] = GimulTypeRedJang //6
 
 	err = ebiten.Run(update, 500, 400, 1.0, "12 chess")
 

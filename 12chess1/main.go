@@ -46,7 +46,7 @@ func update(screen *ebiten.Image) error {
 		for j := 0; j < 3; j++ {
 
 			opts := &ebiten.DrawImageOptions{}
-			opts.GeoM.Translate(float64(S+W*i), float64(T+H*j)) //x좌표, y좌표
+			opts.GeoM.Translate(float64(S+W*i), float64(T+H*j))
 			switch board[i][j] {
 			case GimulTypeGreenWang:
 				//Draw GreenWang

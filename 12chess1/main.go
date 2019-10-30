@@ -1,4 +1,4 @@
-package main
+package main	//39분
 
 import (
 	"log"

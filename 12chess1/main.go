@@ -39,31 +39,34 @@ func update(screen *ebiten.Image) error {
 
 	for i := 0; i < 4; i++ {
 		for j := 0; j < 3; j++ {
+
+			opts := &ebiten.DrawImageOptions{}
+			opts.GeoM.Translate(20, 20)
 			switch board[i][j] {
 			case GimulTypeGreenWang:
 				//Draw GreenWang
-				screen.DrawImage(gimulImgs[GimulTypeGreenWang], nil)
+				screen.DrawImage(gimulImgs[GimulTypeGreenWang], opts)
 			case GimulTypeGreenJa:
 				//Draw GreenJa
-				screen.DrawImage(gimulImgs[GimulTypeGreenJa], nil)
+				screen.DrawImage(gimulImgs[GimulTypeGreenJa], opts)
 			case GimulTypeGreenJang:
 				//Draw GreenJang
-				screen.DrawImage(gimulImgs[GimulTypeGreenJang], nil)
+				screen.DrawImage(gimulImgs[GimulTypeGreenJang], opts)
 			case GimulTypeGreenSang:
 				//Draw GreenSang
-				screen.DrawImage(gimulImgs[GimulTypeGreenSang], nil)
+				screen.DrawImage(gimulImgs[GimulTypeGreenSang], opts)
 			case GimulTypeRedWang:
 				//Draw RedWang
-				screen.DrawImage(gimulImgs[GimulTypeRedWang], nil)
+				screen.DrawImage(gimulImgs[GimulTypeRedWang], opts)
 			case GimulTypeRedJa:
 				//Draw RedJa
-				screen.DrawImage(gimulImgs[GimulTypeRedJa], nil)
+				screen.DrawImage(gimulImgs[GimulTypeRedJa], opts)
 			case GimulTypeRedJang:
 				//Draw RedJang
-				screen.DrawImage(gimulImgs[GimulTypeRedJang], nil)
+				screen.DrawImage(gimulImgs[GimulTypeRedJang], opts)
 			case GimulTypeRedSang:
 				//Draw RedSang
-				screen.DrawImage(gimulImgs[GimulTypeRedSang], nil)
+				screen.DrawImage(gimulImgs[GimulTypeRedSang], opts)
 			}
 		}
 	}

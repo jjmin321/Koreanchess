@@ -42,8 +42,10 @@ func update(screen *ebiten.Image) error {
 			switch board[i][j] {
 			case GimulTypeGreenWang:
 				//Draw GreenWang
+				screen.DrawImage(gimulImgs[GimulTypeGreenWang], nil)
 			case GimulTypeGreenJa:
 				//Draw GreenJa
+				screen.DrawImage(gimulImgs[GimulTypeGreenJa], nil)
 			case GimulTypeGreenJang:
 				//Draw GreenJang
 			case GimulTypeGreenSang:
@@ -84,6 +86,20 @@ func main() {
 	if err != nil {
 		log.Fatalf("read file error: %v", err)
 	}
+
+	// Initialize board
+
+	//green
+	board[0][0] = GimulTypeGreenSang
+	board[0][1] = GimulTypeGreenWang
+	board[0][2] = GimulTypeGreenJang
+	board[1][1] = GimulTypeGreenJa
+
+	//red
+	board[2][1] = GimulTypeRedJa
+	board[3][0] = GimulTypeGreenSang
+	board[3][1] = GimulTypeGreenWang
+	board[3][2] = GimulTypeGreenJang
 
 	err = ebiten.Run(update, 500, 400, 1.0, "12 chess")
 

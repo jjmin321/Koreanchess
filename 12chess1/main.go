@@ -1,4 +1,4 @@
-package main //39분
+package main //40분
 
 import (
 	"log"
@@ -25,13 +25,12 @@ const (
 )
 
 const (
-	S = 20
-	W = 116
-
-	T           = 23
-	H           = 116
-	BoardWidth  = 4
-	BoardHeight = 3
+	GimulStartX = 20
+	GimulStartY = 116
+	GridWidth   = 116
+	GridHeight  = 116
+	BoardWidth  = 4 // Constant declaration : easy to change value.
+	BoardHeight = 3 // Constant declaration : easy to change value.
 )
 
 //when you no need to value == only need to tell apart
@@ -47,11 +46,11 @@ var (
 func update(screen *ebiten.Image) error {
 	screen.DrawImage(bgimg, nil)
 
-	for i := 0; i < 4; i++ {
-		for j := 0; j < 3; j++ {
+	for i := 0; i < BoardWidth; i++ {
+		for j := 0; j < BoardHeight; j++ {
 
 			opts := &ebiten.DrawImageOptions{}
-			opts.GeoM.Translate(float64(S+W*i), float64(T+H*j)) //x좌표, y좌표
+			opts.GeoM.Translate(float64(GimulStartX+GridWidth*i), float64(GimulStartY+GridHeight*j)) //x좌표, y좌표
 			switch board[i][j] {
 			case GimulTypeGreenWang:
 				//Draw GreenWang
@@ -125,16 +124,16 @@ func main() {
 	// Initialize board
 
 	//green
-	board[0][0] = GimulTypeGreenSang //3
-	board[0][1] = GimulTypeGreenWang //0
-	board[0][2] = GimulTypeGreenJang //1
-	board[1][1] = GimulTypeGreenJa   //2
+	board[0][0] = GimulTypeGreenSang //board[0][0]을 3이라고 부르겠다.
+	board[0][1] = GimulTypeGreenWang //board[0][1]을 0이라고 부르겠다.
+	board[0][2] = GimulTypeGreenJang //board[0][2]를 1이라고 부르겠다.
+	board[1][1] = GimulTypeGreenJa   //board[1][1]를 2라고 부르겠다.
 
 	//red
-	board[2][1] = GimulTypeRedJa   //7
-	board[3][0] = GimulTypeRedSang //4
-	board[3][1] = GimulTypeRedWang //5
-	board[3][2] = GimulTypeRedJang //6
+	board[2][1] = GimulTypeRedJa   //board[2][1]을 7이라고 부르겠다.
+	board[3][0] = GimulTypeRedSang //board[3][0]를 4라고 부르겠다.
+	board[3][1] = GimulTypeRedWang //board[3][1]를 5라고 부르겠다.
+	board[3][2] = GimulTypeRedJang //board[3][2]를 6이라고 부르겠다.
 
 	err = ebiten.Run(update, 500, 400, 1.0, "12 chess")
 

@@ -102,22 +102,47 @@ gimulImgs[GimulTypeGreenWang], _, err = ebitenutil.NewImageFromFile("./images/gr
 	}
 ```
 ### board 변수에 이차원 배열 사용해서 말들 배치 컴퓨터에게 알려주기 
+- board 이차원 배열에 이니셜을 나눠주어 구분시킨다.
 ```go
-// Initialize board
-
-	//green
-	board[0][0] = GimulTypeGreenSang //3
-	board[0][1] = GimulTypeGreenWang //0
-	board[0][2] = GimulTypeGreenJang //1
-	board[1][1] = GimulTypeGreenJa //2
+//green
+	board[0][0] = GimulTypeGreenSang 
+	board[0][1] = GimulTypeGreenWang 
+	board[0][2] = GimulTypeGreenJang 
+	board[1][1] = GimulTypeGreenJa   
 
 	//red
-	board[2][1] = GimulTypeRedJa //7
-	board[3][0] = GimulTypeRedSang //4
-	board[3][1] = GimulTypeRedWang //5
-	board[3][2] = GimulTypeRedJang //6
+	board[2][1] = GimulTypeRedJa    
+	board[3][0] = GimulTypeRedSang   
+	board[3][1] = GimulTypeRedWang 
+	board[3][2] = GimulTypeRedJang 
 ```
-### 좌표평면에 말들 그림을 그려서 넣는거
+- 이 코드가 어렵게 보일수도 있겠지만 사실상 이 코드와 같은 의미이다.
+
+```go
+    board[0][0] = 3 //board[0][0]을 3이라고 부르겠다.
+	board[0][1] = 0 //board[0][1]을 0이라고 부르겠다.
+	board[0][2] = 1 //board[0][2]를 1이라고 부르겠다.
+	board[1][1] = 2 //board[1][1]를 2라고 부르겠다.
+
+	//red
+	board[2][1] = 7 //board[2][1]을 7이라고 부르겠다.
+	board[3][0] = 4 //board[3][0]를 4라고 부르겠다.
+	board[3][1] = 5 //board[3][1]를 5라고 부르겠다.
+	board[3][2] = 6 //board[3][2]를 6이라고 부르겠다.
+```
+# 좌표평면에 말들 그림을 그려서 넣기
+
+- 장기판에 장기말들의 배치만 그림을 넣으니 오류가 생겼다. 장기말들이 없어야할 곳도 생기는 것이였다.
+- 그래서 board의 모든 값을 GimulTypeNone으로 먼저 초기화시키고 switch case문을 사용했다.
+
+```go
+// Initialize board
+	for i := 0; i < BoardWidth; i++ {
+		for j := 0; j < BoardHeight; j++ {
+			board[i][j] = GimulTypeNone
+		}
+	}
+``` 
 ```go
 func update(screen *ebiten.Image) error {
 	screen.DrawImage(bgimg, nil)

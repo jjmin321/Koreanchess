@@ -25,12 +25,14 @@ const (
 )
 
 const (
-	GimulStartX = 20  //starting coordinate X
-	GimulStartY = 23  //starting coordinate Y
-	GridWidth   = 116 //한 칸의 가로
-	GridHeight  = 116 //한 칸의 세로
-	BoardWidth  = 4   // Constant declaration : easy to change value.
-	BoardHeight = 3   // Constant declaration : easy to change value.
+	ScreenWidth  = 480
+	ScreenHeight = 360
+	GimulStartX  = 20  //starting coordinate X
+	GimulStartY  = 23  //starting coordinate Y
+	GridWidth    = 116 //한 칸의 가로
+	GridHeight   = 116 //한 칸의 세로
+	BoardWidth   = 4   // Constant declaration : easy to change value.
+	BoardHeight  = 3   // Constant declaration : easy to change value.
 )
 
 //when you no need to value == only need to tell apart
@@ -122,7 +124,11 @@ func main() {
 	}
 
 	// Initialize board
-
+	for i := 0; i < BoardWidth; i++ {
+		for j := 0; j < BoardHeight; j++ {
+			board[i][j] = GimulTypeNone
+		}
+	}
 	//green
 	board[0][0] = GimulTypeGreenSang //board[0][0]을 3이라고 부르겠다.
 	board[0][1] = GimulTypeGreenWang //board[0][1]을 0이라고 부르겠다.
@@ -135,7 +141,7 @@ func main() {
 	board[3][1] = GimulTypeRedWang //board[3][1]를 5라고 부르겠다.
 	board[3][2] = GimulTypeRedJang //board[3][2]를 6이라고 부르겠다.
 
-	err = ebiten.Run(update, 600, 500, 1.0, "12 chess")
+	err = ebiten.Run(update, ScreenWidth, ScreenHeight, 1.0, "12 chess")
 
 	if err != nil {
 		log.Fatalf("Ebiten run error: %v", err)

@@ -135,7 +135,7 @@ func main() {
 	board[3][1] = GimulTypeRedWang //board[3][1]를 5라고 부르겠다.
 	board[3][2] = GimulTypeRedJang //board[3][2]를 6이라고 부르겠다.
 
-	err = ebiten.Run(update, 500, 400, 1.0, "12 chess")
+	err = ebiten.Run(update, 600, 500, 1.0, "12 chess")
 
 	if err != nil {
 		log.Fatalf("Ebiten run error: %v", err)

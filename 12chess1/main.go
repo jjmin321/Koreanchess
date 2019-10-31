@@ -25,8 +25,8 @@ const (
 )
 
 const (
-	GimulStartX = 20  //시작하는 x좌표
-	GimulStartY = 23  //시작하는 y좌표
+	GimulStartX = 20  //starting coordinate X
+	GimulStartY = 23  //starting coordinate Y
 	GridWidth   = 116 //한 칸의 가로
 	GridHeight  = 116 //한 칸의 세로
 	BoardWidth  = 4   // Constant declaration : easy to change value.

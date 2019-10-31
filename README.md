@@ -9,16 +9,35 @@ type GimulType int
 // Type aliasing
 
 const (
-	GimulTypeNone GimulType = -1 + iota		
-	GimulTypeGreenWang //0
-	GimulTypeGreenJa //1
-	GimulTypeGreenJang //2
-	GimulTypeGreenSang //3
-	GimulTypeRedWang //4
-	GimulTypeRedJa //5
-	GimulTypeRedJang //6
-	GimulTypeRedSang //7
-	GimulTypeMax //8
+	GimulTypeNone      GimulType = -1 + iota
+	GimulTypeGreenWang           //0
+	GimulTypeGreenJa             //1
+	GimulTypeGreenJang           //2
+	GimulTypeGreenSang           //3
+	GimulTypeRedWang             //4
+	GimulTypeRedJa               //5
+	GimulTypeRedJang             //6
+	GimulTypeRedSang             //7
+	GimulTypeMax                 //8
+)
+
+const (
+	GimulStartX = 20  //starting coordinate X
+	GimulStartY = 23  //starting coordinate Y
+	GridWidth   = 116 //한 칸의 가로
+	GridHeight  = 116 //한 칸의 세로
+	BoardWidth  = 4   // Constant declaration : easy to change value.
+	BoardHeight = 3   // Constant declaration : easy to change value.
+)
+
+//when you no need to value == only need to tell apart
+//You can use iota grammer.
+//iota in const start at 0 -> next const : 1 -> next next const : 2 -> next next next const: 3
+
+var (
+	board     [BoardWidth][BoardHeight]GimulType //크기가 [4][3]인 GimulType 타입 board 배열을 선언한다.
+	bgimg     *ebiten.Image                      //*ebiten.Image 타입 bgimg를 선언한다.
+	gimulImgs [GimulTypeMax]*ebiten.Image        //크기가 GimulTypeMax인 *ebiten.Image 타입 gimulImgs 배열을 선언한다.
 )
 
 //when you no need to value == only need to tell apart

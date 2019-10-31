@@ -25,12 +25,12 @@ const (
 )
 
 const (
-	GimulStartX = 20
-	GimulStartY = 116
-	GridWidth   = 116
-	GridHeight  = 116
-	BoardWidth  = 4 // Constant declaration : easy to change value.
-	BoardHeight = 3 // Constant declaration : easy to change value.
+	GimulStartX = 20  //시작하는 x좌표
+	GimulStartY = 23  //시작하는 y좌표
+	GridWidth   = 116 //한 칸의 가로
+	GridHeight  = 116 //한 칸의 세로
+	BoardWidth  = 4   // Constant declaration : easy to change value.
+	BoardHeight = 3   // Constant declaration : easy to change value.
 )
 
 //when you no need to value == only need to tell apart

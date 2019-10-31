@@ -1,4 +1,4 @@
-package main	//39분
+package main //39분
 
 import (
 	"log"
@@ -24,24 +24,29 @@ const (
 	GimulTypeMax                 //8
 )
 
+const (
+	S = 20
+	W = 116
+
+	T           = 23
+	H           = 116
+	BoardWidth  = 4
+	BoardHeight = 3
+)
+
 //when you no need to value == only need to tell apart
 //You can use iota grammer.
 //iota in const start at 0 -> next const : 1 -> next next const : 2 -> next next next const: 3
 
 var (
-	board     [4][3]GimulType             //크기가 [4][3]인 GimulType 타입 board 배열을 선언한다.
-	bgimg     *ebiten.Image               //*ebiten.Image 타입 bgimg를 선언한다.
-	gimulImgs [GimulTypeMax]*ebiten.Image //크기가 GimulTypeMax인 *ebiten.Image 타입 gimulImgs 배열을 선언한다.
+	board     [BoardWidth][BoardHeight]GimulType //크기가 [4][3]인 GimulType 타입 board 배열을 선언한다.
+	bgimg     *ebiten.Image                      //*ebiten.Image 타입 bgimg를 선언한다.
+	gimulImgs [GimulTypeMax]*ebiten.Image        //크기가 GimulTypeMax인 *ebiten.Image 타입 gimulImgs 배열을 선언한다.
 )
 
 func update(screen *ebiten.Image) error {
 	screen.DrawImage(bgimg, nil)
 
-	S := 20
-	W := 116
-
-	T := 23
-	H := 116
 	for i := 0; i < 4; i++ {
 		for j := 0; j < 3; j++ {
 

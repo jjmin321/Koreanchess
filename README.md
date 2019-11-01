@@ -4,6 +4,7 @@
 - Code refactoring
 - how to make 2D game with golang
 - Importance of const
+- Type aliasing
 # 2D 게임을 구현시킬 수 있게 해주는 golang 패키지 다운받기 
 - github.com/hajimehoshi/ebiten
 - github.com/hajimehoshi/ebiten/ebitenutil

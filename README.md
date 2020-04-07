@@ -1,3 +1,13 @@
+<div align="center">
+  
+![GitHub contributors](https://img.shields.io/github/contributors/jjmin321/Koreanchess)
+![GitHub forks](https://img.shields.io/github/forks/jjmin321/Koreanchess?label=Forks)
+![GitHub stars](https://img.shields.io/github/stars/jjmin321/Koreanchess?style=Stars)
+![GitHub issues](https://img.shields.io/github/issues-raw/jjmin321/Koreanchess)
+[![Go Report Card](https://goreportcard.com/badge/github.com/jjmin321/Koreanchess)](https://goreportcard.com/report/github.com/jjmin321/Koreanchess)
+
+</div>
+
 # ♟️ KoreanChess 12장기 게임
 10/30/2019 ~ 12/6/2019
 
